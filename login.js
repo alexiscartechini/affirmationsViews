@@ -6,11 +6,13 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
   const basicAuth = 'Basic ' + btoa(username + ':' + password);
 
   try {
-    const response = await fetch('http://localhost:8080/api/public/hello', {
-      method: 'GET',
-      headers: {
-        'Authorization': basicAuth
-      }
+    const response = await fetch('http://localhost:8080/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+        username: username,
+        password: password
+      })
     });
 
     const messageElement = document.getElementById('message');
