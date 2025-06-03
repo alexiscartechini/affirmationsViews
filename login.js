@@ -18,9 +18,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const messageElement = document.getElementById('message');
 
     if (response.ok) {
-      const text = await response.text();
-      messageElement.textContent = "Login exitoso! 🎉 Respuesta del servidor: " + text;
-      messageElement.style.color = 'green';
+      const token = await response.text();
+      localStorage.setItem("jwtToken", token);
+      window.location.href = "menu.html";
     } else if (response.status === 401) {
       messageElement.textContent = "Sorry, wrong username or password";
       messageElement.style.color = 'red';
@@ -30,9 +30,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     }
 
   } catch (error) {
-    console.error('Error al hacer fetch:', error);
+    console.error('Error while fetching:', error);
     const messageElement = document.getElementById('message');
-    messageElement.textContent = "No se pudo conectar con el servidor 😢";
+    messageElement.textContent = "Sorry mate, we couldn't connect";
     messageElement.style.color = 'red';
   }
 });
