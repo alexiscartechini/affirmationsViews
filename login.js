@@ -1,4 +1,4 @@
-document.getElementById('loginForm').addEventListener('submit', async function(e) {
+document.getElementById('loginForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const username = document.getElementById('username').value;
@@ -9,24 +9,23 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const response = await fetch('http://localhost:8080/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
+      body: new URLSearchParams({
         username: username,
         password: password
       })
     });
 
-    const messageElement = document.getElementById('message');
+    const errorMessage = document.getElementById('message');
+    errorMessage.style.color = 'red';
 
     if (response.ok) {
       const token = await response.text();
       localStorage.setItem("jwtToken", token);
       window.location.href = "menu.html";
     } else if (response.status === 401) {
-      messageElement.textContent = "Sorry, wrong username or password";
-      messageElement.style.color = 'red';
+      errorMessage.textContent = "Sorry, wrong username or password";
     } else {
-      messageElement.textContent = "Unexpected error: " + response.status;
-      messageElement.style.color = 'red';
+      errorMessage.textContent = "Unexpected error: " + response.status;
     }
 
   } catch (error) {
