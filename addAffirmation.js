@@ -3,18 +3,29 @@ document.getElementById('addAffirmations').addEventListener('submit', function (
 
   const affirmation = document.getElementById('affirmationInput').value;
   const messageDiv = document.getElementById('message');
+  const token = localStorage.getItem('jwtToken');
+
+  if (!token) {
+    messageDiv.textContent = 'Please, sign in.';
+    messageDiv.style.color = 'red';
+    return;
+  }
+
+  console.log("JWT Token:", token);
 
   fetch('http://localhost:8080/api/affirmations', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
     },
-    credentials: 'include',
     body: JSON.stringify({ sentence: affirmation })
   })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Failed to add affirmation');
+        return response.text().then(text => {
+          throw new Error(text || 'Failed to add affirmation');
+        });
       }
       messageDiv.textContent = 'Affirmation added successfully!';
       messageDiv.style.color = 'green';
