@@ -1,4 +1,4 @@
-document.getElementById('signInForm').addEventListener('submit', async function (e) {
+document.getElementById('signinForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const name = document.getElementById('name').value;
