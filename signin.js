@@ -29,6 +29,9 @@ document.getElementById('signinForm').addEventListener('submit', async function 
     if (response.ok) {
       messageElement.textContent = 'User created successfully!';
       messageElement.style.color = 'green';
+    } else if (response.status === 409) {
+    messageElement.textContent = 'User already exists.';
+    messageElement.style.color = 'red';
     } else {
       messageElement.textContent = 'Failed to create user.';
       messageElement.style.color = 'red';
