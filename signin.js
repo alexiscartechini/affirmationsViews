@@ -68,6 +68,17 @@ document.addEventListener('DOMContentLoaded', function () {
       if (response.ok) {
         messageElement.textContent = 'User created successfully!';
         messageElement.style.color = 'green';
+
+        const loginButton = document.createElement('button');
+        loginButton.textContent = 'Go to Login';
+        loginButton.style.display = 'block';
+        loginButton.style.marginTop = '10px';
+
+        loginButton.addEventListener('click', function () {
+          window.location.href = 'login.html';
+        });
+
+        messageElement.insertAdjacentElement('afterend', loginButton);
       } else if (response.status === 409) {
         messageElement.textContent = 'User already exists.';
         messageElement.style.color = 'red';
