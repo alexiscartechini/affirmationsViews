@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const token = localStorage.getItem("jwtToken"); // Asumo que el token se guarda así
+  const tokenObj = JSON.parse(localStorage.getItem("jwtToken"));
+  const token = tokenObj?.token; 
+
   const affirmationsList = document.getElementById("affirmationsList");
   const errorDiv = document.getElementById("error");
 

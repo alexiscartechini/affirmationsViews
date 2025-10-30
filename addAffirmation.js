@@ -3,7 +3,9 @@ document.getElementById('addAffirmations').addEventListener('submit', function (
 
   const affirmation = document.getElementById('affirmationInput').value;
   const messageDiv = document.getElementById('message');
-  const token = localStorage.getItem('jwtToken');
+
+  const tokenObj = JSON.parse(localStorage.getItem("jwtToken"));
+  const token = tokenObj?.token; 
 
   if (!token) {
     messageDiv.textContent = 'Please, sign in.';
