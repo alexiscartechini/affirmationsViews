@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
             editBtn.onclick = () => {
               const newText = prompt("Edit your affirmation:", affirmation.sentence);
               if (newText) {
-                fetch(`http://localhost:8080/api/affirmations`, {
-                  method: "POST",
+                fetch(`http://localhost:8080/api/affirmations/${affirmation.id}`, {
+                  method: "PUT",
                   headers: {
                     "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             const deleteBtn = document.createElement("button");
+            deleteBtn.style.marginLeft = "10px";
             deleteBtn.textContent = "Delete";
             deleteBtn.onclick = () => {
               if (confirm("Are you sure you want to delete this affirmation?")) {
