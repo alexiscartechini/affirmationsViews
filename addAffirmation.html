@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <title>New affirmation</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
 </head>
 
 <body>
   <h1>Add affirmation</h1>
   <form id="addAffirmations">
     <textarea id="affirmationInput" placeholder="Affirmation" required rows="4" cols="50"></textarea>
-    <button type="submit">Add</button>
+    <button class="btn-primary" type="submit">Add</button>
   </form>
   <div id="message"></div>
   <script src="addAffirmation.js"></script>
 
-  <button onclick="window.location.href='menu.html'">Back</button>
+  <button class="btn-primary" onclick="window.location.href='menu.html'">Back</button>
 </body>
 </html>

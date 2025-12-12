@@ -4,17 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Sign in</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
 </head>
 
 <body>
   <h1>Sign In</h1>
   <form id="signinForm">
-    <input type="text" id="name" placeholder="Username" required>
-    <input type="email" id="emailAddress" placeholder="Email" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-    <button type="submit">Sign In</button>
+    <input class="form-primary" type="text" id="name" placeholder="Username" required><br>
+    <input class="form-primary" type="email" id="emailAddress" placeholder="Email" required><br>
+    <input class="form-primary" type="password" id="password" placeholder="Password" required><br>
+    <input class="form-primary" type="password" id="confirmPassword" placeholder="Confirm Password" required><br>
+    <button class="btn-primary" type="submit">Sign In</button>
   </form>
 
   <ul id="passwordCriteria" style="color: red;">

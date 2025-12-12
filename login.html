@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
 </head>
 <body>
   <h1>Login</h1>
   <form id="loginForm" action="http://localhost:8080/api/auth/login" method="POST">
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button type="submit">Login</button>
+    <input class="form-primary" type="text" id="username" placeholder="Username" required>
+    <input class="form-primary" type="password" id="password" placeholder="Password" required>
+    <button class="btn-primary" type="submit">Login</button>
   </form> 
   <p id="message"></p>
   <script src="login.js"></script>
