@@ -1,0 +1,24 @@
+{
+  "name": "affirmationsview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "addAffirmation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexiscartechini/affirmationsViews.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alexiscartechini/affirmationsViews/issues"
+  },
+  "homepage": "https://github.com/alexiscartechini/affirmationsViews#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
