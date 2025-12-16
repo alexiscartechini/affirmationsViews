@@ -5,16 +5,15 @@
   <title>Menú Principal</title>
   <link rel="stylesheet" href="dist/output.css">
 </head>
-<body>
+<body class="page-container">
   <h1>Welcome back!</h1>
   <button class="btn-primary" id="addAffirmations">Add affirmation</button>
   <button class="btn-primary" id="showAffirmations">Show affirmations</button>
-  <br><br>
-  <button class="btn-primary" id="logOut">Log out</button>
-  <button class="btn-primary" id="settings">Settings</button>
 
-  <!-- <button class="btn-primary" id="deleteAccount">Delete account</button> -->
-  
+  <div class="flex gap-1">
+    <button class="btn-primary" id="logOut">Log out</button>
+    <button class="btn-primary" id="settings">Settings</button>
+  </div>  
   <div id="message"></div>
   <script src="menu.js"></script>
 </body>

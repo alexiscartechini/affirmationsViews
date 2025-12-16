@@ -21,8 +21,21 @@
 }
 
 @layer components {
+
+  .page-container {
+    @apply max-w-2xl mx-auto mt-10 space-y-6;
+  }
+  
   .form-layout {
     @apply space-y-2;
+  }
+
+  .form-textarea {
+    @apply block w-full max-w-md rounded-lg border border-gray-300
+    px-3 py-2 text-sm text-gray-800
+    placeholder-gray-400
+    shadow-sm
+    focus:border-teal-600 focus:ring-2 focus:ring-teal-400/50;
   }
 }
 
@@ -42,8 +55,6 @@
   focus:ring-2 focus:ring-rose-400/50 
   active:bg-rose-700 active:border-rose-700;
 } 
-
-
 
 .form-primary {
   @apply space-y-1 inline-block font-medium block max-w-md rounded-lg border border-gray-200 px-3 py-2 leading-6 placeholder-gray-500 focus:border-blue-500 
